@@ -34,7 +34,7 @@ No overlap                    Overlap found
 
 | File | Role |
 |---|---|
-| `rag3.py` | Everything — PDF extraction, chunking, embedding, vector storage, retrieval, relevance gate, and answer generation |
+| `rag.py` | Everything — PDF extraction, chunking, embedding, vector storage, retrieval, relevance gate, and answer generation |
 | `sample.pdf` | The source document to query — must sit alongside the script |
 
 ## Setup
@@ -55,7 +55,7 @@ No overlap                    Overlap found
 
 4. Run it:
    ```
-   python rag3.py
+   python rag.py
    ```
 
 5. Enter a question about the PDF when prompted.

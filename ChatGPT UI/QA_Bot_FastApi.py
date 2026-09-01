@@ -5,7 +5,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import os
 
-# to run uvicorn chatgptdemo:app --reload
+# to run: uvicorn QA_Bot_FastApi:app --reload
 
 # Load .env
 load_dotenv(override=True)

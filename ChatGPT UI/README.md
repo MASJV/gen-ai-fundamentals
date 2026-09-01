@@ -40,8 +40,9 @@ Rendered as a chat bubble in the browser
    OPENAI_API_KEY=sk-xxxx
    ```
 
-3. Create a `static/` folder and move `index.html` into it — the backend
-   serves the frontend from a folder named `static`:
+3. The backend serves the frontend straight from a `static/` folder next to
+   it — the repo already ships `index.html` there, so no manual setup is
+   needed:
    ```
    static/
    └── index.html

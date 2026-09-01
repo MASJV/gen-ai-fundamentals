@@ -1,14 +1,27 @@
-from ollama import generate
+from ollama import chat 
 
-text = input("Enter details such as starting location, destination, travel dates and budget for trip planning: ")
+destination = input("Destination: ")
+days = input("Number of days: ")
+budget = input("Budget: ")
 
-prompt = ("Plan a trip based on the following details:\n" 
-    + text + 
-    '\nReturn only valid JSON in this exact format: {"starting location": ["..."], "destination": ["..."], "travel dates": ["..."], "budget": "..."}'
+prompt = (
+    "Create a " + days + "-day travel itinerary for " +
+    destination + ".\n" +
+    "Budget: " + budget + "\n\n" +
+    "Include:\n" +
+    "1. Day-wise plan\n" +
+    "2. Places to visit\n" +
+    "3. Local food recommendations\n" +
+    "4. Travel tips"
 )
-response = generate(
-    model = "llama3.2:1b", 
-    prompt = prompt,
+
+response = chat(
+    model="llama3.2:1b",
+    messages=[
+        {"role": "user", 
+         "content": prompt
+        }
+    ]
 )
 
-print(response["response"])
+print(response["message"]["content"])
